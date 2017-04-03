@@ -1,0 +1,2426 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://highlandjs.org/"
+
+    >highland (v2.10.5)</a>
+</h1>
+<h4>The high-level streams library</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.highland">module highland</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland._isStreamError">
+            function <span class="apidocSignatureSpan">highland.</span>_isStreamError
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland._isStreamRedirect">
+            function <span class="apidocSignatureSpan">highland.</span>_isStreamRedirect
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.add">
+            function <span class="apidocSignatureSpan">highland.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.append">
+            function <span class="apidocSignatureSpan">highland.</span>append
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.apply">
+            function <span class="apidocSignatureSpan">highland.</span>apply
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.batch">
+            function <span class="apidocSignatureSpan">highland.</span>batch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.batchWithTimeOrCount">
+            function <span class="apidocSignatureSpan">highland.</span>batchWithTimeOrCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.collect">
+            function <span class="apidocSignatureSpan">highland.</span>collect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.compact">
+            function <span class="apidocSignatureSpan">highland.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.compose">
+            function <span class="apidocSignatureSpan">highland.</span>compose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.concat">
+            function <span class="apidocSignatureSpan">highland.</span>concat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.consume">
+            function <span class="apidocSignatureSpan">highland.</span>consume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.curry">
+            function <span class="apidocSignatureSpan">highland.</span>curry
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.debounce">
+            function <span class="apidocSignatureSpan">highland.</span>debounce
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.doto">
+            function <span class="apidocSignatureSpan">highland.</span>doto
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.drop">
+            function <span class="apidocSignatureSpan">highland.</span>drop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.each">
+            function <span class="apidocSignatureSpan">highland.</span>each
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.errors">
+            function <span class="apidocSignatureSpan">highland.</span>errors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.extend">
+            function <span class="apidocSignatureSpan">highland.</span>extend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.filter">
+            function <span class="apidocSignatureSpan">highland.</span>filter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.find">
+            function <span class="apidocSignatureSpan">highland.</span>find
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.findWhere">
+            function <span class="apidocSignatureSpan">highland.</span>findWhere
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.flatFilter">
+            function <span class="apidocSignatureSpan">highland.</span>flatFilter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.flatMap">
+            function <span class="apidocSignatureSpan">highland.</span>flatMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.flatten">
+            function <span class="apidocSignatureSpan">highland.</span>flatten
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.flip">
+            function <span class="apidocSignatureSpan">highland.</span>flip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.fromError">
+            function <span class="apidocSignatureSpan">highland.</span>fromError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.get">
+            function <span class="apidocSignatureSpan">highland.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.group">
+            function <span class="apidocSignatureSpan">highland.</span>group
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.head">
+            function <span class="apidocSignatureSpan">highland.</span>head
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.intersperse">
+            function <span class="apidocSignatureSpan">highland.</span>intersperse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.invoke">
+            function <span class="apidocSignatureSpan">highland.</span>invoke
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.isArray">
+            function <span class="apidocSignatureSpan">highland.</span>isArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.isFunction">
+            function <span class="apidocSignatureSpan">highland.</span>isFunction
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.isObject">
+            function <span class="apidocSignatureSpan">highland.</span>isObject
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.isStream">
+            function <span class="apidocSignatureSpan">highland.</span>isStream
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.isString">
+            function <span class="apidocSignatureSpan">highland.</span>isString
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.isUndefined">
+            function <span class="apidocSignatureSpan">highland.</span>isUndefined
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.keys">
+            function <span class="apidocSignatureSpan">highland.</span>keys
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.last">
+            function <span class="apidocSignatureSpan">highland.</span>last
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.latest">
+            function <span class="apidocSignatureSpan">highland.</span>latest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.log">
+            function <span class="apidocSignatureSpan">highland.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.map">
+            function <span class="apidocSignatureSpan">highland.</span>map
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.merge">
+            function <span class="apidocSignatureSpan">highland.</span>merge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.mergeWithLimit">
+            function <span class="apidocSignatureSpan">highland.</span>mergeWithLimit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.ncurry">
+            function <span class="apidocSignatureSpan">highland.</span>ncurry
+            <span class="apidocSignatureSpan">(n, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.nfcall">
+            function <span class="apidocSignatureSpan">highland.</span>nfcall
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.not">
+            function <span class="apidocSignatureSpan">highland.</span>not
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.of">
+            function <span class="apidocSignatureSpan">highland.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.otherwise">
+            function <span class="apidocSignatureSpan">highland.</span>otherwise
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.pairs">
+            function <span class="apidocSignatureSpan">highland.</span>pairs
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.parallel">
+            function <span class="apidocSignatureSpan">highland.</span>parallel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.partial">
+            function <span class="apidocSignatureSpan">highland.</span>partial
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.pick">
+            function <span class="apidocSignatureSpan">highland.</span>pick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.pickBy">
+            function <span class="apidocSignatureSpan">highland.</span>pickBy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.pipeline">
+            function <span class="apidocSignatureSpan">highland.</span>pipeline
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.pluck">
+            function <span class="apidocSignatureSpan">highland.</span>pluck
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.ratelimit">
+            function <span class="apidocSignatureSpan">highland.</span>ratelimit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.reduce">
+            function <span class="apidocSignatureSpan">highland.</span>reduce
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.reduce1">
+            function <span class="apidocSignatureSpan">highland.</span>reduce1
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.reject">
+            function <span class="apidocSignatureSpan">highland.</span>reject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.scan">
+            function <span class="apidocSignatureSpan">highland.</span>scan
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.scan1">
+            function <span class="apidocSignatureSpan">highland.</span>scan1
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.seq">
+            function <span class="apidocSignatureSpan">highland.</span>seq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.sequence">
+            function <span class="apidocSignatureSpan">highland.</span>sequence
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.series">
+            function <span class="apidocSignatureSpan">highland.</span>series
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.set">
+            function <span class="apidocSignatureSpan">highland.</span>set
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.setImmediate">
+            function <span class="apidocSignatureSpan">highland.</span>setImmediate
+            <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.slice">
+            function <span class="apidocSignatureSpan">highland.</span>slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.sort">
+            function <span class="apidocSignatureSpan">highland.</span>sort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.sortBy">
+            function <span class="apidocSignatureSpan">highland.</span>sortBy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.split">
+            function <span class="apidocSignatureSpan">highland.</span>split
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.splitBy">
+            function <span class="apidocSignatureSpan">highland.</span>splitBy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.stopOnError">
+            function <span class="apidocSignatureSpan">highland.</span>stopOnError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.streamifyAll">
+            function <span class="apidocSignatureSpan">highland.</span>streamifyAll
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.take">
+            function <span class="apidocSignatureSpan">highland.</span>take
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.tap">
+            function <span class="apidocSignatureSpan">highland.</span>tap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.throttle">
+            function <span class="apidocSignatureSpan">highland.</span>throttle
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.through">
+            function <span class="apidocSignatureSpan">highland.</span>through
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.transduce">
+            function <span class="apidocSignatureSpan">highland.</span>transduce
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.uniq">
+            function <span class="apidocSignatureSpan">highland.</span>uniq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.uniqBy">
+            function <span class="apidocSignatureSpan">highland.</span>uniqBy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.values">
+            function <span class="apidocSignatureSpan">highland.</span>values
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.where">
+            function <span class="apidocSignatureSpan">highland.</span>where
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.wrapCallback">
+            function <span class="apidocSignatureSpan">highland.</span>wrapCallback
+            <span class="apidocSignatureSpan">(f, mappingHint)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.zip">
+            function <span class="apidocSignatureSpan">highland.</span>zip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.zipAll">
+            function <span class="apidocSignatureSpan">highland.</span>zipAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.highland.zipAll0">
+            function <span class="apidocSignatureSpan">highland.</span>zipAll0
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">highland.</span>nil</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.highland" id="apidoc.module.highland">module highland</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.highland._isStreamError" id="apidoc.element.highland._isStreamError">
+        function <span class="apidocSignatureSpan">highland.</span>_isStreamError
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isStreamError = function (x) {
+    return _.isObject(x) &#x26;&#x26; !!x.__HighlandStreamError__;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland._isStreamRedirect" id="apidoc.element.highland._isStreamRedirect">
+        function <span class="apidocSignatureSpan">highland.</span>_isStreamRedirect
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isStreamRedirect = function (x) {
+    return _.isObject(x) &#x26;&#x26; !!x.__HighlandStreamRedirect__;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.add" id="apidoc.element.highland.add">
+        function <span class="apidocSignatureSpan">highland.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.append" id="apidoc.element.highland.append">
+        function <span class="apidocSignatureSpan">highland.</span>append
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.apply" id="apidoc.element.highland.apply">
+        function <span class="apidocSignatureSpan">highland.</span>apply
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">apply = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.batch" id="apidoc.element.highland.batch">
+        function <span class="apidocSignatureSpan">highland.</span>batch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">batch = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.batchWithTimeOrCount" id="apidoc.element.highland.batchWithTimeOrCount">
+        function <span class="apidocSignatureSpan">highland.</span>batchWithTimeOrCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">batchWithTimeOrCount = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.collect" id="apidoc.element.highland.collect">
+        function <span class="apidocSignatureSpan">highland.</span>collect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">collect = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.compact" id="apidoc.element.highland.compact">
+        function <span class="apidocSignatureSpan">highland.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compact = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.compose" id="apidoc.element.highland.compose">
+        function <span class="apidocSignatureSpan">highland.</span>compose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose = function () {
+    var fns = slice.call(arguments).reverse();
+    return _.seq.apply(null, fns);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.concat" id="apidoc.element.highland.concat">
+        function <span class="apidocSignatureSpan">highland.</span>concat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concat = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.consume" id="apidoc.element.highland.consume">
+        function <span class="apidocSignatureSpan">highland.</span>consume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">consume = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.curry" id="apidoc.element.highland.curry">
+        function <span class="apidocSignatureSpan">highland.</span>curry
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">curry = function (fn) {
+    var args = slice.call(arguments);
+    return _.ncurry.apply(this, [fn.length].concat(args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.debounce" id="apidoc.element.highland.debounce">
+        function <span class="apidocSignatureSpan">highland.</span>debounce
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debounce = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.doto" id="apidoc.element.highland.doto">
+        function <span class="apidocSignatureSpan">highland.</span>doto
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doto = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.drop" id="apidoc.element.highland.drop">
+        function <span class="apidocSignatureSpan">highland.</span>drop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">drop = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.each" id="apidoc.element.highland.each">
+        function <span class="apidocSignatureSpan">highland.</span>each
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">each = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Handling events
+
+```javascript
+var clicks = _(&#x27;click&#x27;, btn).map(1);
+var counter = clicks.scan(0, _.add);
+
+counter.<span class="apidocCodeKeywordSpan">each</span>(function (n) {
+    $(&#x27;#count&#x27;).text(n);
+});
+```
+
+Learn more at [highlandjs.org](http://highlandjs.org)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.errors" id="apidoc.element.highland.errors">
+        function <span class="apidocSignatureSpan">highland.</span>errors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var data = _(filenames).map(readFile).parallel(4);
+```
+
+Handling errors
+
+```javascript
+data.<span class="apidocCodeKeywordSpan">errors</span>(function (err, rethrow) {
+    // handle or rethrow error
+});
+```
+
+Piping to a Node Stream
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.extend" id="apidoc.element.highland.extend">
+        function <span class="apidocSignatureSpan">highland.</span>extend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.filter" id="apidoc.element.highland.filter">
+        function <span class="apidocSignatureSpan">highland.</span>filter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Piping in data from Node Streams
+
+```javascript
+var output = fs.createWriteStream(&#x27;output&#x27;);
+var docs = db.createReadStream();
+
+// wrap a node stream and pipe to file
+_(docs).<span class="apidocCodeKeywordSpan">filter</span>(isBlogpost).pipe(output);
+
+// or, pipe in a node stream directly:
+var through = _.pipeline(_.filter(isBlogpost));
+docs.pipe(through).pipe(output);
+```
+
+Handling events
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.find" id="apidoc.element.highland.find">
+        function <span class="apidocSignatureSpan">highland.</span>find
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.findWhere" id="apidoc.element.highland.findWhere">
+        function <span class="apidocSignatureSpan">highland.</span>findWhere
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findWhere = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.flatFilter" id="apidoc.element.highland.flatFilter">
+        function <span class="apidocSignatureSpan">highland.</span>flatFilter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flatFilter = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.flatMap" id="apidoc.element.highland.flatMap">
+        function <span class="apidocSignatureSpan">highland.</span>flatMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flatMap = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.flatten" id="apidoc.element.highland.flatten">
+        function <span class="apidocSignatureSpan">highland.</span>flatten
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flatten = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.flip" id="apidoc.element.highland.flip">
+        function <span class="apidocSignatureSpan">highland.</span>flip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flip = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.fromError" id="apidoc.element.highland.fromError">
+        function <span class="apidocSignatureSpan">highland.</span>fromError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromError = function (error) {
+    return _(function (push) {
+        push(error);
+        push(null, _.nil);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.get" id="apidoc.element.highland.get">
+        function <span class="apidocSignatureSpan">highland.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.group" id="apidoc.element.highland.group">
+        function <span class="apidocSignatureSpan">highland.</span>group
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">group = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.head" id="apidoc.element.highland.head">
+        function <span class="apidocSignatureSpan">highland.</span>head
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.intersperse" id="apidoc.element.highland.intersperse">
+        function <span class="apidocSignatureSpan">highland.</span>intersperse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">intersperse = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.invoke" id="apidoc.element.highland.invoke">
+        function <span class="apidocSignatureSpan">highland.</span>invoke
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invoke = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.isArray" id="apidoc.element.highland.isArray">
+        function <span class="apidocSignatureSpan">highland.</span>isArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.isFunction" id="apidoc.element.highland.isFunction">
+        function <span class="apidocSignatureSpan">highland.</span>isFunction
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFunction = function (x) {
+    return typeof x === &#x27;function&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.isObject" id="apidoc.element.highland.isObject">
+        function <span class="apidocSignatureSpan">highland.</span>isObject
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isObject = function (x) {
+    return typeof x === &#x27;object&#x27; &#x26;&#x26; x !== null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.isStream" id="apidoc.element.highland.isStream">
+        function <span class="apidocSignatureSpan">highland.</span>isStream
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStream = function (x) {
+    return _.isObject(x) &#x26;&#x26; !!x.__HighlandStream__;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.isString" id="apidoc.element.highland.isString">
+        function <span class="apidocSignatureSpan">highland.</span>isString
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isString = function (x) {
+    return typeof x === &#x27;string&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.isUndefined" id="apidoc.element.highland.isUndefined">
+        function <span class="apidocSignatureSpan">highland.</span>isUndefined
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isUndefined = function (x) {
+    return typeof x === &#x27;undefined&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.keys" id="apidoc.element.highland.keys">
+        function <span class="apidocSignatureSpan">highland.</span>keys
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keys = function (obj) {
+    return _(keys(obj));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.last" id="apidoc.element.highland.last">
+        function <span class="apidocSignatureSpan">highland.</span>last
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">last = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.latest" id="apidoc.element.highland.latest">
+        function <span class="apidocSignatureSpan">highland.</span>latest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">latest = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.log" id="apidoc.element.highland.log">
+        function <span class="apidocSignatureSpan">highland.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+    console.log.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.map" id="apidoc.element.highland.map">
+        function <span class="apidocSignatureSpan">highland.</span>map
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // xs is [1,2,3,4]
+});
+```
+
+Mapping over a Stream
+
+```javascript
+var doubled = _([1,2,3,4]).<span class="apidocCodeKeywordSpan">map</span>(function (x) {
+    return x * 2;
+});
+```
+
+Reading files in parallel (4 at once)
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.merge" id="apidoc.element.highland.merge">
+        function <span class="apidocSignatureSpan">highland.</span>merge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.mergeWithLimit" id="apidoc.element.highland.mergeWithLimit">
+        function <span class="apidocSignatureSpan">highland.</span>mergeWithLimit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mergeWithLimit = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.ncurry" id="apidoc.element.highland.ncurry">
+        function <span class="apidocSignatureSpan">highland.</span>ncurry
+        <span class="apidocSignatureSpan">(n, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ncurry = function (n, fn) {
+    var largs = slice.call(arguments, 2);
+    if (largs.length &#x3e;= n) {
+        return fn.apply(this, largs.slice(0, n));
+    }
+
+    return _.partial.apply(this, [_.ncurry, n, fn].concat(largs));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.nfcall" id="apidoc.element.highland.nfcall">
+        function <span class="apidocSignatureSpan">highland.</span>nfcall
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nfcall = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.not" id="apidoc.element.highland.not">
+        function <span class="apidocSignatureSpan">highland.</span>not
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">not = function (x) {
+    return !x;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.of" id="apidoc.element.highland.of">
+        function <span class="apidocSignatureSpan">highland.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+    return _([x]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.otherwise" id="apidoc.element.highland.otherwise">
+        function <span class="apidocSignatureSpan">highland.</span>otherwise
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">otherwise = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.pairs" id="apidoc.element.highland.pairs">
+        function <span class="apidocSignatureSpan">highland.</span>pairs
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pairs = function (obj) {
+    return _.keys(obj).map(function (k) {
+        return [k, obj[k]];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.parallel" id="apidoc.element.highland.parallel">
+        function <span class="apidocSignatureSpan">highland.</span>parallel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parallel = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return x * 2;
+});
+```
+
+Reading files in parallel (4 at once)
+
+```javascript
+var data = _(filenames).map(readFile).<span class="apidocCodeKeywordSpan">parallel</span>(4);
+```
+
+Handling errors
+
+```javascript
+data.errors(function (err, rethrow) {
+// handle or rethrow error
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.partial" id="apidoc.element.highland.partial">
+        function <span class="apidocSignatureSpan">highland.</span>partial
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">partial = function (f) {
+    var args = slice.call(arguments, 1);
+    return function () {
+        return f.apply(this, args.concat(slice.call(arguments)));
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.pick" id="apidoc.element.highland.pick">
+        function <span class="apidocSignatureSpan">highland.</span>pick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pick = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.pickBy" id="apidoc.element.highland.pickBy">
+        function <span class="apidocSignatureSpan">highland.</span>pickBy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pickBy = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.pipeline" id="apidoc.element.highland.pipeline">
+        function <span class="apidocSignatureSpan">highland.</span>pipeline
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipeline = function () {
+    if (!arguments.length) {
+        return _();
+    }
+    var start = arguments[0], rest, startHighland;
+    if (!_.isStream(start) &#x26;&#x26; !_.isFunction(start.resume)) {
+        // not a Highland stream or Node stream, start with empty stream
+        start = _();
+        startHighland = start;
+        rest = slice.call(arguments);
+    }
+    else {
+        // got a stream as first argument, co-erce to Highland stream
+        startHighland = _(start);
+        rest = slice.call(arguments, 1);
+    }
+
+    var end = rest.reduce(function (src, dest) {
+        return src.through(dest);
+    }, startHighland);
+
+    var wrapper = _(function (push, next) {
+        end.pull(function (err, x) {
+            push(err, x);
+            if (x !== nil) {
+                next();
+            }
+        });
+    });
+
+    wrapper.write = function (x) {
+        return start.write(x);
+    };
+
+    wrapper.end = function () {
+        return start.end();
+    };
+
+    start.on(&#x27;drain&#x27;, function () {
+        wrapper.emit(&#x27;drain&#x27;);
+    });
+
+    return wrapper;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var output = fs.createWriteStream(&#x27;output&#x27;);
+var docs = db.createReadStream();
+
+// wrap a node stream and pipe to file
+_(docs).filter(isBlogpost).pipe(output);
+
+// or, pipe in a node stream directly:
+var through = _.<span class="apidocCodeKeywordSpan">pipeline</span>(_.filter(isBlogpost));
+docs.pipe(through).pipe(output);
+```
+
+Handling events
+
+```javascript
+var clicks = _(&#x27;click&#x27;, btn).map(1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.pluck" id="apidoc.element.highland.pluck">
+        function <span class="apidocSignatureSpan">highland.</span>pluck
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pluck = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.ratelimit" id="apidoc.element.highland.ratelimit">
+        function <span class="apidocSignatureSpan">highland.</span>ratelimit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ratelimit = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.reduce" id="apidoc.element.highland.reduce">
+        function <span class="apidocSignatureSpan">highland.</span>reduce
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reduce = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.reduce1" id="apidoc.element.highland.reduce1">
+        function <span class="apidocSignatureSpan">highland.</span>reduce1
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reduce1 = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.reject" id="apidoc.element.highland.reject">
+        function <span class="apidocSignatureSpan">highland.</span>reject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.scan" id="apidoc.element.highland.scan">
+        function <span class="apidocSignatureSpan">highland.</span>scan
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+docs.pipe(through).pipe(output);
+```
+
+Handling events
+
+```javascript
+var clicks = _(&#x27;click&#x27;, btn).map(1);
+var counter = clicks.<span class="apidocCodeKeywordSpan">scan</span>(0, _.add);
+
+counter.each(function (n) {
+    $(&#x27;#count&#x27;).text(n);
+});
+```
+
+Learn more at [highlandjs.org](http://highlandjs.org)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.scan1" id="apidoc.element.highland.scan1">
+        function <span class="apidocSignatureSpan">highland.</span>scan1
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan1 = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.seq" id="apidoc.element.highland.seq">
+        function <span class="apidocSignatureSpan">highland.</span>seq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">seq = function () {
+    var fns = slice.call(arguments);
+    return function () {
+        if (!fns.length) {
+            return null;
+        }
+        var r = fns[0].apply(this, arguments);
+        for (var i = 1; i &#x3c; fns.length; i++) {
+            r = fns[i].call(this, r);
+        }
+        return r;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.sequence" id="apidoc.element.highland.sequence">
+        function <span class="apidocSignatureSpan">highland.</span>sequence
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sequence = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.series" id="apidoc.element.highland.series">
+        function <span class="apidocSignatureSpan">highland.</span>series
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">series = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.set" id="apidoc.element.highland.set">
+        function <span class="apidocSignatureSpan">highland.</span>set
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.setImmediate" id="apidoc.element.highland.setImmediate">
+        function <span class="apidocSignatureSpan">highland.</span>setImmediate
+        <span class="apidocSignatureSpan">(callback, arg1, arg2, arg3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setImmediate = function (callback, arg1, arg2, arg3) {
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;&#x22;callback&#x22; argument must be a function&#x27;);
+  }
+
+  var i, args;
+
+  switch (arguments.length) {
+    // fast cases
+    case 1:
+      break;
+    case 2:
+      args = [arg1];
+      break;
+    case 3:
+      args = [arg1, arg2];
+      break;
+    default:
+      args = [arg1, arg2, arg3];
+      for (i = 4; i &#x3c; arguments.length; i++)
+        // extend array dynamically, makes .apply run much faster in v6.0.0
+        args[i - 1] = arguments[i];
+      break;
+  }
+  return createImmediate(args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.slice" id="apidoc.element.highland.slice">
+        function <span class="apidocSignatureSpan">highland.</span>slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slice = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.sort" id="apidoc.element.highland.sort">
+        function <span class="apidocSignatureSpan">highland.</span>sort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sort = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.sortBy" id="apidoc.element.highland.sortBy">
+        function <span class="apidocSignatureSpan">highland.</span>sortBy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sortBy = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.split" id="apidoc.element.highland.split">
+        function <span class="apidocSignatureSpan">highland.</span>split
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.splitBy" id="apidoc.element.highland.splitBy">
+        function <span class="apidocSignatureSpan">highland.</span>splitBy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">splitBy = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.stopOnError" id="apidoc.element.highland.stopOnError">
+        function <span class="apidocSignatureSpan">highland.</span>stopOnError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopOnError = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.streamifyAll" id="apidoc.element.highland.streamifyAll">
+        function <span class="apidocSignatureSpan">highland.</span>streamifyAll
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">streamifyAll = function (arg) {
+    if (typeof arg !== &#x27;function&#x27; &#x26;&#x26; typeof arg !== &#x27;object&#x27;) {
+        throw new TypeError(&#x27;takes an object or a constructor function&#x27;);
+    }
+    var suffix = &#x27;Stream&#x27;;
+
+    var ret = streamifyAll(arg, suffix);
+    if (isClass(arg)) {
+        ret.prototype = streamifyAll(arg.prototype, suffix);
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.take" id="apidoc.element.highland.take">
+        function <span class="apidocSignatureSpan">highland.</span>take
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">take = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.tap" id="apidoc.element.highland.tap">
+        function <span class="apidocSignatureSpan">highland.</span>tap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tap = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.throttle" id="apidoc.element.highland.throttle">
+        function <span class="apidocSignatureSpan">highland.</span>throttle
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">throttle = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.through" id="apidoc.element.highland.through">
+        function <span class="apidocSignatureSpan">highland.</span>through
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">through = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.transduce" id="apidoc.element.highland.transduce">
+        function <span class="apidocSignatureSpan">highland.</span>transduce
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transduce = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.uniq" id="apidoc.element.highland.uniq">
+        function <span class="apidocSignatureSpan">highland.</span>uniq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uniq = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.uniqBy" id="apidoc.element.highland.uniqBy">
+        function <span class="apidocSignatureSpan">highland.</span>uniqBy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uniqBy = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.values" id="apidoc.element.highland.values">
+        function <span class="apidocSignatureSpan">highland.</span>values
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">values = function (obj) {
+    return _.keys(obj).map(function (k) {
+        return obj[k];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.where" id="apidoc.element.highland.where">
+        function <span class="apidocSignatureSpan">highland.</span>where
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">where = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.wrapCallback" id="apidoc.element.highland.wrapCallback">
+        function <span class="apidocSignatureSpan">highland.</span>wrapCallback
+        <span class="apidocSignatureSpan">(f, mappingHint)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrapCallback = function (f, mappingHint) {
+<span class="apidocCodeCommentSpan">    /*eslint-enable no-multi-spaces */
+</span>    var mapper = hintMapper(mappingHint);
+
+    return function () {
+        var self = this;
+        var args = slice.call(arguments);
+        return _(function (push) {
+            var cb = function (err) {
+                if (err) {
+                    push(err);
+                }
+                else {
+                    var cbArgs = slice.call(arguments, 1);
+                    var v = mapper.apply(this, cbArgs);
+                    push(null, v);
+                }
+                push(null, nil);
+            };
+            f.apply(self, args.concat([cb]));
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.zip" id="apidoc.element.highland.zip">
+        function <span class="apidocSignatureSpan">highland.</span>zip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zip = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.zipAll" id="apidoc.element.highland.zipAll">
+        function <span class="apidocSignatureSpan">highland.</span>zipAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipAll = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.highland.zipAll0" id="apidoc.element.highland.zipAll0">
+        function <span class="apidocSignatureSpan">highland.</span>zipAll0
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipAll0 = function () {
+    return f.apply(this, args.concat(slice.call(arguments)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
